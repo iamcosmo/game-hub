@@ -13,11 +13,11 @@ function App() {
         <Navbar/>
       </GridItem>
       <Show above="lg"> {/*Only shows this grid item for the devices with screen above type lg(large) */}
-        <GridItem area="aside" bg="gold">
+        <GridItem area="aside">
           Aside
         </GridItem>
       </Show>
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main">
         Main
       </GridItem>
     </Grid>
