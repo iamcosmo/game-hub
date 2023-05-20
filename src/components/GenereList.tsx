@@ -34,9 +34,14 @@ const GenereList = ({ onSelectGenre }: Props) => {
                 <Button
                   onClick={() => onSelectGenre(genre)}
                   fontSize="lg"
-                  variant="link"
+                  variant="ghost"
                   whiteSpace='normal'
+                  overflow='hidden'
+                  textOverflow='ellipsis'
                   wordBreak='break-word'
+                  width='100%'
+                  height='100%'
+                  paddingBlock='2'
                 >
                   {genre.name}
                 </Button>
