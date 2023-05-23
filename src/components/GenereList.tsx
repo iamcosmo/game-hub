@@ -20,6 +20,9 @@ const GenereList = ({ onSelectGenre, selectedGenre }: Props) => {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   ];
   const { data, isLoading, error } = useGenres();
+
+  //This two ifs currently donot work as we are fetcghing static data from ../data/genre
+  //But in the future if we decide to fetch data again from the server then it may help
   if (error) return null;
   if (isLoading)
     return (
