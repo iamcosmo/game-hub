@@ -19,7 +19,7 @@ const useGenres = ()=> useQuery({
         return res.data;
     },
     staleTime: 1000*60*60*24, //24 hours
-    initialData: { count: 0, results: genre }
+    initialData: { count: genre.length, results: genre }
 }) 
 
 export default useGenres;
