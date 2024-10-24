@@ -12,7 +12,7 @@ import SideBar from "./components/SideBar";
 
 export interface GameQuery {
   genreId?: number;
-  platform: Platforms | null;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }
@@ -61,9 +61,9 @@ function App() {
           <Flex marginBottom={5}>
             <Box marginRight={5}>
               <PlatformSelector
-                selectedPlatform={gameQuery.platform}
+                selectedPlatformId={gameQuery.platformId}
                 onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                  setGameQuery({ ...gameQuery, platformId:platform.id })
                 }
               />
             </Box>
