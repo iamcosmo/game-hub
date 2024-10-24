@@ -23,7 +23,7 @@ const SideBar = ({onSelectGenre}:Props) => {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   
   const handleGenreSelect = (genre: any) => {
-    setGameQuery({ ...gameQuery, genre });
+    setGameQuery({ ...gameQuery, genreId:genre.id });
     onSelectGenre(genre); // Call the callback prop with the selected genre
   };
   return (
@@ -36,7 +36,7 @@ const SideBar = ({onSelectGenre}:Props) => {
             <DrawerHeader>Genre</DrawerHeader>
             <DrawerBody >
               <GenereList
-                selectedGenre={gameQuery.genre}
+                selectedGenreId={gameQuery.genreId}
                 onSelectGenre={handleGenreSelect}
               />
             </DrawerBody>
@@ -48,3 +48,4 @@ const SideBar = ({onSelectGenre}:Props) => {
 };
 
 export default SideBar;
+ 

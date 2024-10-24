@@ -40,7 +40,6 @@ function App() {
       </GridItem>
       <Show above="lg">
         {" "}
-        {/*Only shows this grid item for the devices with screen above type lg(large) */}
         <GridItem area="aside" paddingX={5}>
           <GenereList
             selectedGenreId={gameQuery.genreId}
