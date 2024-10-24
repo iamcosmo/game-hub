@@ -11,7 +11,7 @@ import GameHeading from "./components/GameHeading";
 import SideBar from "./components/SideBar";
 
 export interface GameQuery {
-  genre: Genre | null;
+  genreId?: number;
   platform: Platforms | null;
   sortOrder: string;
   searchText: string;
@@ -21,7 +21,7 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   const handleSelectGenre = (genre: any) => {
-    setGameQuery({ ...gameQuery, genre });
+    setGameQuery({ ...gameQuery, genreId:genre.id });
   };
 
   return (
@@ -45,8 +45,8 @@ function App() {
         {/*Only shows this grid item for the devices with screen above type lg(large) */}
         <GridItem area="aside" paddingX={5}>
           <GenereList
-            selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            selectedGenreId={gameQuery.genreId}
+            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genreId:genre.id })}
           />
         </GridItem>
       </Show>

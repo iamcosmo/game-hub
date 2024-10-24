@@ -1,29 +1,25 @@
 import { Heading } from "@chakra-ui/react";
 import { GameQuery } from "../App";
+import useGames from "../hooks/useGames";
+import useGenres from "../hooks/useGenres";
 
 interface Props {
   gameQuery: GameQuery | null;
 }
 const GameHeading = ({ gameQuery }: Props) => {
-    //Other Way...
 
-    //const heading = `${gameQuery?.platform?.name|| ''} ${gameQuery?.genre?.name|| ''} Games`;
+  const {data:genres} = useGenres();
+  const genre = genres?.results.find(g=>g.id===gameQuery?.genreId)
+   
   return (
-    //Other Way.....
-
-    /*<Heading as="h1" paddingBottom={5} fontSize='5xl'>
-            {heading}
-      </Heading>*/
-
-
-      //My Way
+   
     <Heading as="h1" paddingBottom={5} fontSize='5xl'>
       {(gameQuery?.platform?.name || "") +
         "\t" +
-        (gameQuery?.genre?.name || "") +
+        (genre?.name || "") +
         "\tGames"}
     </Heading>
-    //My Way
+    
   );
 };
 
