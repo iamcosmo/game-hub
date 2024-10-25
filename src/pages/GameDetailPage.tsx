@@ -1,5 +1,6 @@
-import { Heading, Skeleton, Text } from "@chakra-ui/react";
+import { Heading, Skeleton } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import ExpandableText from "../components/ExpandableText";
 import useGame from "../hooks/useGame";
 
 const GameDetailPage = () => {
@@ -10,8 +11,10 @@ const GameDetailPage = () => {
   if (isLoading) {
     return (
       <>
-        <Skeleton height="40px" />
-        <Skeleton height="20px" mt="4" />
+        <Skeleton height="60px" />
+        <Skeleton height="30px" mt="4" />
+        <Skeleton height="30px" mt="4" />
+        <Skeleton height="30px" mt="4" />
       </>
     );
   }
@@ -20,8 +23,8 @@ const GameDetailPage = () => {
 
   return (
     <>
-      <Heading>{game.name}</Heading>
-      <Text>{game.description_raw}</Text>
+      <Heading size='2xl' marginBottom={4}>{game.name}</Heading>
+      <ExpandableText >{game.description_raw}</ExpandableText>
     </>
   );
 };
