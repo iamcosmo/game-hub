@@ -1,14 +1,14 @@
 import { HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
+import gamehubvlogo from '../assets/game-hub-logo.jpg';
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <HStack padding="10px">
       <Link to="/">
-        <Image src={logo} boxSize="60px" objectFit="cover" />
+        <Image src={gamehubvlogo} boxSize="60px" objectFit="cover" />
       </Link>
       <SearchInput />
       <ColorModeSwitch />
